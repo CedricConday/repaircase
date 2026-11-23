@@ -1,13 +1,16 @@
 agent,total,status,e1,e2,e3,e4,e5,e6,gates_failed,missing,ongoing_trials
-metformin + clemastine,3,incomplete,2,1,0,0,0,0,,"no judgement row (approval, tolerability)",
-CNM-Au8,1,incomplete,0,0,1,0,0,0,,"no judgement row (approval, tolerability)",
-GSK239512,1,incomplete,1,0,0,0,0,0,,"no judgement row (approval, tolerability)",
-bexarotene,1,incomplete,2,0,0,-1,0,0,,"no judgement row (approval, tolerability)",
-clemastine,1,incomplete,2,1,0,0,-2,0,,"no judgement row (approval, tolerability)",clemastine-recover; clemastine-revive; clemastine-reinforce
-PIPE-307,-1,incomplete,0,0,0,-1,0,0,,"no judgement row (approval, tolerability)",
-bazedoxifene,-1,incomplete,0,0,0,-1,0,0,,"no judgement row (approval, tolerability)",
-high-dose biotin (MD1003),-1,incomplete,0,0,0,-1,0,0,,"no judgement row (approval, tolerability)",
-metformin,-1,incomplete,0,0,0,-1,0,0,,"no judgement row (approval, tolerability)",metformin-macsimise
-domperidone,-2,incomplete,0,0,0,-2,0,0,,"no judgement row (approval, tolerability)",
-elezanumab,-2,incomplete,0,0,0,-2,0,0,,"no judgement row (approval, tolerability)",
-opicinumab,-2,incomplete,0,0,0,-2,0,0,,"no judgement row (approval, tolerability)",
+metformin + clemastine,3,below the bar,2,1,0,0,0,0,,,
+phenytoin,3,below the bar,2,0,0,0,0,1,,,
+clemastine,2,below the bar,2,1,0,0,-2,1,,,clemastine-recover; clemastine-revive
+high-dose biotin (MD1003),0,below the bar,0,0,2,-2,0,0,,,
+bazedoxifene,-1,below the bar,0,0,0,-1,0,0,,,
+domperidone,-2,below the bar,0,0,0,-2,0,0,,,
+metformin,-2,below the bar,0,0,0,-2,0,0,,,metformin-macsimise; metformin-paediatric; metformin-ageing
+CNM-Au8,1,gate failed,0,0,1,0,0,0,G1 not approved for any use,,
+GSK239512,1,gate failed,1,0,0,0,0,0,G1 not approved for any use,,
+bexarotene,1,gate failed,2,0,0,-1,0,0,G3 trial authors advised against use,,
+PIPE-791,0,gate failed,0,0,0,0,0,0,G1 not approved for any use,,
+PIPE-307,-1,gate failed,0,0,0,-1,0,0,G1 not approved for any use,,
+autologous MSC-derived neural progenitors,-1,gate failed,0,0,0,-1,0,0,G1 not approved for any use,,
+elezanumab,-2,gate failed,0,0,0,-2,0,0,G1 not approved for any use,,
+opicinumab,-2,gate failed,0,0,0,-2,0,0,G1 not approved for any use,,

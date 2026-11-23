@@ -1,0 +1,16 @@
+agent,approved,approved_source,advised_against,tolerability,tolerability_source,checked_on
+metformin + clemastine,yes,"Drugs@FDA (api.fda.gov/drug/drugsfda): metformin 214 applications incl. NDA216778; clemastine fumarate 15 applications incl. ANDA074075",no,limited,"RepairMap row metformin-clemastine-ccmr2 (conference report): more fatigue and gut side effects on treatment; the report does not state it was well tolerated",2026-11-23
+clemastine,yes,"Drugs@FDA: clemastine fumarate, 15 applications incl. ANDA074075",no,well,"PMID 29029896 abstract: no serious adverse events; fatigue more common on clemastine",2026-11-23
+metformin,yes,"Drugs@FDA: metformin hydrochloride, 214 applications",no,na,no positive trial,2026-11-23
+phenytoin,yes,"Drugs@FDA: phenytoin, 43 applications incl. NDA008762",no,well,"PMID 26822749 abstract: 'Treatment was well tolerated'; one attributable serious event (severe rash)",2026-11-23
+bexarotene,yes,"Drugs@FDA: bexarotene, 11 applications incl. ANDA203174",yes,limited,"PMID 34418398 abstract: central hypothyroidism 26 of 26, hypertriglyceridaemia 24 of 26; authors advise against use",2026-11-23
+bazedoxifene,yes,"Drugs@FDA: bazedoxifene acetate, NDA022247 (with conjugated oestrogens)",no,na,no positive trial,2026-11-23
+domperidone,yes,"EMA referral page 'Domperidone-containing medicines': authorised nationally in EU member states for nausea and vomiting; no Drugs@FDA record",no,na,no positive trial,2026-11-23
+high-dose biotin (MD1003),yes,"Drugs@FDA lists biotin only as a vitamin ingredient (15 applications); the 300 mg/day product itself was not found there",no,na,"tolerability of the positive trial not sourced; cannot change the ranking",2026-11-23
+opicinumab,no,"no Drugs@FDA record on 2026-11-23; EMA not checked",no,na,no positive trial,2026-11-23
+elezanumab,no,"no Drugs@FDA record on 2026-11-23; EMA not checked",no,na,no positive trial,2026-11-23
+GSK239512,no,"no Drugs@FDA record on 2026-11-23; EMA not checked",no,na,no positive trial,2026-11-23
+PIPE-307,no,"no Drugs@FDA record on 2026-11-23; EMA not checked",no,na,no positive trial,2026-11-23
+PIPE-791,no,"no Drugs@FDA record on 2026-11-23; EMA not checked",no,na,no positive trial,2026-11-23
+CNM-Au8,no,"no Drugs@FDA record on 2026-11-23; EMA not checked",no,na,no positive trial,2026-11-23
+autologous MSC-derived neural progenitors,no,"cell therapy; no approval found, FDA and EMA product lists not checked",no,na,no positive trial,2026-11-23
