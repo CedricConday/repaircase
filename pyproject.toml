@@ -10,12 +10,24 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Cedric Conday" }]
+dependencies = ["repairmap>=0.1.0"]
 
 [project.optional-dependencies]
 dev = ["pytest", "ruff"]
 
+[project.scripts]
+repaircase = "repaircase.score:main"
+
+# The judgements live in data/ at the top of the repository; a built wheel carries
+# the same file as repaircase/data/.
 [tool.setuptools]
-packages = ["repaircase"]
+packages = ["repaircase", "repaircase.data"]
+
+[tool.setuptools.package-dir]
+"repaircase.data" = "data"
+
+[tool.setuptools.package-data]
+"repaircase.data" = ["judgements.csv"]
 
 [tool.ruff]
 line-length = 110

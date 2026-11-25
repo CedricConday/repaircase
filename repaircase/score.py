@@ -3,7 +3,7 @@
 Reads the RepairMap trial table and a small sheet of sourced judgements
 (approval, tolerability). Prints the ranking and writes results/scores.csv.
 
-Run: python -m repaircase.score --trials ../repairmap/data/trials.csv
+Run: repaircase   (or, in a checkout: python -m repaircase.score --trials ../repairmap/data/trials.csv)
 """
 
 from __future__ import annotations
@@ -14,7 +14,22 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-JUDGEMENTS = ROOT / "data" / "judgements.csv"
+CHECKOUT = (ROOT / "pyproject.toml").exists()  # run from the repository, not an installed wheel
+
+
+def _packaged(package: str, name: str) -> Path:
+    from importlib.resources import files
+
+    return Path(str(files(package) / name))
+
+
+def _default_trials() -> Path:
+    """The sibling RepairMap checkout when there is one, else the table in the installed repairmap."""
+    sibling = ROOT.parent / "repairmap" / "data" / "trials.csv"
+    return sibling if CHECKOUT and sibling.exists() else _packaged("repairmap.data", "trials.csv")
+
+
+JUDGEMENTS = ROOT / "data" / "judgements.csv" if CHECKOUT else _packaged("repaircase.data", "judgements.csv")
 BAR = 4
 DECIDED = {"positive", "mixed", "negative", "harm"}
 
@@ -130,13 +145,14 @@ def write(scores: list[Score], out: Path) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Score repair-trial candidates against docs/RUBRIC.md.")
-    ap.add_argument("--trials", type=Path, default=ROOT.parent / "repairmap" / "data" / "trials.csv")
+    ap.add_argument("--trials", type=Path, default=None,
+                    help="RepairMap trials.csv (default: the installed repairmap's table)")
     ap.add_argument("--judgements", type=Path, default=JUDGEMENTS)
-    ap.add_argument("--out", type=Path, default=ROOT / "results" / "scores.csv")
+    ap.add_argument("--out", type=Path, default=ROOT / "results" / "scores.csv" if CHECKOUT else Path("scores.csv"))
     a = ap.parse_args()
 
     judgements = read_csv(a.judgements) if a.judgements.exists() else []
-    scores = score_all(read_csv(a.trials), judgements)
+    scores = score_all(read_csv(a.trials or _default_trials()), judgements)
     write(scores, a.out)
     for s in scores:
         print(f"{s.total:>3}  {s.status:<15} {s.agent}  "

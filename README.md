@@ -2,7 +2,7 @@
 
 Working name. The written case for one already-approved drug as the candidate for a myelin repair trial in multiple sclerosis, scored against a rubric that was fixed before the scoring.
 
-Started 2026-11-23. Part of [RepairStack](https://github.com/CedricConday/repairstack). Nothing here is medical advice.
+Started 2026-11-23. Part of RepairStack. Nothing here is medical advice.
 
 ## How it works
 
@@ -19,8 +19,8 @@ Scored on RepairMap v0.1.0 (64 trials).
 ## Run it
 
 ```
-pip install -e ".[dev]"
-python -m repaircase.score --trials ../repairmap/data/trials.csv
+pip install repaircase     # pulls in repairmap and its trial table
+repaircase                 # prints the ranking, writes scores.csv
 ```
 
 Approval and tolerability for each drug are in `data/judgements.csv`, each with its source. US approval records come from the FDA's public Drugs@FDA database.
