@@ -148,7 +148,8 @@ def main() -> int:
     ap.add_argument("--trials", type=Path, default=None,
                     help="RepairMap trials.csv (default: the installed repairmap's table)")
     ap.add_argument("--judgements", type=Path, default=JUDGEMENTS)
-    ap.add_argument("--out", type=Path, default=ROOT / "results" / "scores.csv" if CHECKOUT else Path("scores.csv"))
+    default_out = ROOT / "results" / "scores.csv" if CHECKOUT else Path("scores.csv")
+    ap.add_argument("--out", type=Path, default=default_out)
     a = ap.parse_args()
 
     judgements = read_csv(a.judgements) if a.judgements.exists() else []
